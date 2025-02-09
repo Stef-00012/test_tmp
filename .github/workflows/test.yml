@@ -34,5 +34,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: steps.tag.outputs.skip
+          tag: ${{ steps.tag.outputs.skip }}
           generateReleaseNotes: true
