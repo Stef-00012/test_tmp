@@ -21,7 +21,7 @@ jobs:
         run: echo "tag=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13)" > $GITHUB_OUTPUT
 
       - name: test file
-        run: echo "hello world 123" > ${{ github.workspace }}/test.txt
+        run: echo "hello world dsdsdfd123" > ${{ github.workspace }}/test.txt
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -34,5 +34,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: ${{ steps.tag.outputs.skip }}
+          tag: "release-${{ github.sha::7 }}"
           generateReleaseNotes: true
