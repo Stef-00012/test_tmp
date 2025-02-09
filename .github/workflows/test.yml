@@ -16,6 +16,10 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
+      - name: Generate random tag
+        id: tag
+        run: echo "tag=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13)" > $GITHUB_OUTPUT
+
       - name: test file
         run: echo "hello world 123" > ${{ github.workspace }}/test.txt
 
@@ -30,5 +34,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: test
+          tag: steps.tag.outputs.skip
           generateReleaseNotes: true
