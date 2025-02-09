@@ -27,4 +27,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "text.txt"
+          tag: test
           generateReleaseNotes: true
