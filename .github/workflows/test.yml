@@ -1,6 +1,10 @@
 name: Build APK
 
 on:
+  push:
+    paths:
+      - .github/workflows/**
+
   workflow_dispatch: 
 
 jobs:
