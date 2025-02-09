@@ -22,7 +22,7 @@ jobs:
 
       - name: Exit if skip is true
         if: steps.test.outputs.skip == 'true'
-        run: exit 0
+        run: exit 1
 
       - name: Generate random tag
         id: tag
@@ -42,5 +42,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: "1234"
+          tag: "12345"
           generateReleaseNotes: true
