@@ -16,13 +16,13 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
-      - name: test
-        id: test
-        run: echo "skip=true" >> $GITHUB_OUTPUT
+      # - name: test
+      #   id: test
+      #   run: echo "skip=true" >> $GITHUB_OUTPUT
 
-      - name: Exit if skip is true
-        if: steps.test.outputs.skip == 'true'
-        run: exit 1
+      # - name: Exit if skip is true
+      #   if: steps.test.outputs.skip == 'true'
+      #   run: exit 1
 
       - name: Generate random tag
         id: tag
@@ -42,5 +42,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: "12345"
+          tag: "123456"
           generateReleaseNotes: true
