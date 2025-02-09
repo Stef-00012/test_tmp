@@ -16,6 +16,14 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
+      - name: test
+        id: test
+        run: echo "skip=true" >> $GITHUB_OUTPUT
+
+      - name: Exit if skip is true
+        if: steps.test.outputs.skip == 'true'
+        run: exit 0
+
       - name: Generate random tag
         id: tag
         run: echo "tag=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13)" > $GITHUB_OUTPUT
