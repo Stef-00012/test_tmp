@@ -42,5 +42,5 @@ jobs:
         with:
           artifacts: "test.txt"
           artifactContentType: text/plain
-          tag: "release-${{ github.sha::7 }}"
+          tag: "1234"
           generateReleaseNotes: true
