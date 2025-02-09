@@ -28,6 +28,6 @@ jobs:
       - name: Publish Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "text.txt"
+          artifacts: "test.txt"
           tag: test
           generateReleaseNotes: true
